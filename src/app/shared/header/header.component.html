@@ -1,0 +1,18 @@
+<nav class="header-background navbar navbar-expand-lg">
+    <a class="navbar-brand">
+        <h1>{{title}}</h1>
+    </a>
+    <div class="collapse navbar-collapse">
+        <div class="container-right">
+          <div class="form-inline header-form">
+            <mat-form-field class="search-input">
+              <input matInput type="text" [(ngModel)]="searchValue" (keyup)="doFilter($event.target.value)" placeholder="Search product here...">
+            </mat-form-field>
+            <button mat-raised-button class="search-button" (click)="triggerSearch()">Search</button>
+            <button mat-mini-fab class="fab-button" aria-label="Add product" (click)="add()">
+              <mat-icon>add</mat-icon>
+            </button>
+          </div>
+        </div>
+      </div>
+  </nav>

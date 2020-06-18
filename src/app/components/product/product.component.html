@@ -1,0 +1,54 @@
+<div class="container">
+  <div class="row">
+    <div class="col-11">
+      <h1>{{data?.message}}</h1>
+    </div>
+    <div class="col-1 text-right">
+        <mat-icon class="close-icon" (click)="close()">close</mat-icon>
+    </div>
+  </div>
+
+<div class="row">
+    <form [formGroup]="productForm" class="form-container">
+
+      <div class="row">
+        <div class="col-7">
+          <mat-form-field>
+            <mat-label>Name</mat-label>
+            <input formControlName="name" matInput placeholder="Enter name...">
+          </mat-form-field>
+        </div>
+        <div class="col-4">
+          <mat-form-field>
+            <mat-label>Price</mat-label>
+            <input type="number" formControlName="price" matInput placeholder="Enter price...">
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-2">
+          <mat-checkbox formControlName="isAvailable">Availability</mat-checkbox>
+        </div>
+        <div class="col-5">
+          <mat-form-field>
+            <mat-label>Manufacture Date</mat-label>
+            <input matInput formControlName="manufactureDate" placeholder="Enter DD/MM/YYYY">
+          </mat-form-field>
+        </div>
+        <div class="col-4">
+          <mat-form-field>
+            <mat-label>Location</mat-label>
+            <input matInput formControlName="location" placeholder="Enter location...">
+          </mat-form-field>
+        </div>
+      </div>
+    </form>
+</div>
+
+<div  class="row">
+  <div class="col-12 text-center">
+    <button *ngIf="!data?.value" mat-raised-button color="accent" (click)="submit()">Submit</button>
+    <button *ngIf="data?.value" mat-raised-button color="primary" (click)="update()">Update</button>
+  </div>
+</div>

@@ -1,0 +1,119 @@
+<app-header (onSearch)="searchFilter($event)" [title]="title"></app-header>
+
+<div class="row warehouse-container">
+  <div class="col-4">
+    <mat-accordion>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Premium Members
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <mat-selection-list>
+          <mat-list-option *ngFor="let member of memberPremiumGroup;">
+            <div>
+              {{member.name}}
+            </div>
+          </mat-list-option>
+        </mat-selection-list>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
+  <div class="col-4">
+    <mat-accordion>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Regular Members
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <mat-selection-list>
+          <mat-list-option *ngFor="let member of memberRegularGroup;">
+            <div>
+              {{member.name}}
+            </div>
+          </mat-list-option>
+        </mat-selection-list>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
+  <div class="col-4">
+    <button mat-raised-button color="warn" [routerLink]="['/home']">Go to Product Page</button>
+  </div>
+</div>
+
+<div class="row warehouse-group-container">
+  <div class="col-4">
+    <button mat-raised-button color="primary" (click)="addmemberVIP()">Add users to VIP</button>
+  </div>
+  <div class="col-4">
+    <button mat-raised-button color="accent" (click)="addmemberRegular()">Add users to Regular Members</button>
+  </div>
+</div>
+
+<table mat-table [dataSource]="data" matSort matSortActive="id" matSortDirection="asc">
+    <ng-container matColumnDef="select">
+      <th mat-header-cell *matHeaderCellDef>
+        <mat-checkbox (change)="$event ? masterToggle() : null"
+                      [checked]="selection.hasValue() && isAllSelected()"
+                      [indeterminate]="selection.hasValue() && !isAllSelected()"
+                      [aria-label]="checkboxLabel()">
+        </mat-checkbox>
+      </th>
+      <td mat-cell *matCellDef="let row">
+        <mat-checkbox (click)="$event.stopPropagation()"
+                      (change)="$event ? selection.toggle(row) : null"
+                      [checked]="selection.isSelected(row)"
+                      [aria-label]="checkboxLabel(row)">
+        </mat-checkbox>
+      </td>
+    </ng-container>
+  
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>ID</th>
+        <td mat-cell *matCellDef="let row">{{row.id}}</td>
+      </ng-container>
+  
+        <ng-container matColumnDef="edit">
+          <th mat-header-cell *matHeaderCellDef></th>
+          <td mat-cell *matCellDef="let row">
+            <mat-icon class="home-icon" (click)="editCustomer(row)">create</mat-icon>
+          </td>
+        </ng-container>
+  
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>
+          <td mat-cell *matCellDef="let row">{{row.name}}</td>
+        </ng-container>
+  
+        <ng-container matColumnDef="address">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Address</th>
+          <td mat-cell *matCellDef="let row">{{row.address}}</td>
+        </ng-container>
+  
+        <ng-container matColumnDef="phone">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Phone</th>
+          <td mat-cell *matCellDef="let row">{{row.phone}}</td>
+        </ng-container>
+  
+        <ng-container matColumnDef="memberSinceDate">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Member Since</th>
+          <td mat-cell *matCellDef="let row">{{row.memberSinceDate}}</td>
+        </ng-container>
+  
+        <ng-container matColumnDef="isActive">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Active</th>
+          <td mat-cell *matCellDef="let row">{{row.isActive ? 'active': 'not active'}}</td>
+        </ng-container>
+  
+        <ng-container matColumnDef="delete">
+          <th mat-header-cell *matHeaderCellDef></th>
+          <td mat-cell *matCellDef="let row">
+            <mat-icon class="home-icon" (click)="deleteCustomer(row)">delete</mat-icon>
+          </td>
+        </ng-container>
+  
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  <mat-paginator [pageSizeOptions]="[10]" showFirstLastButtons></mat-paginator>
