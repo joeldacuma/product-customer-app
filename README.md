@@ -10,7 +10,7 @@ Firebase (https://firebase.google.com)
 Node.js (https://nodejs.org/en)
 ```
 1. Customer Modal:
-![CUSTOMERMODAL](https://github.com/joeldacuma/crescendo-test/blob/master/github-images/customer-modal.PNG)
+![CUSTOMERMODAL](https://github.com/joeldacuma/product-customer-app/blob/master/github-images/customer-modal.PNG)
 
 2. Customer Page:
 ![CUSTOMERPAGE](https://github.com/joeldacuma/crescendo-test/blob/master/github-images/customer-page.PNG)
