@@ -9,13 +9,13 @@ Angular-cli 9+ (https://cli.angular.io)
 Firebase (https://firebase.google.com)
 Node.js (https://nodejs.org/en)
 ```
-1. Customer Modal:
+1. CUSTOMER MODAL:
 ![CUSTOMERMODAL](https://github.com/joeldacuma/product-customer-app/blob/master/github-images/customer-modal.PNG)
 
-2. Customer Page:
+2. CUSTOER PAGE:
 ![CUSTOMERPAGE](https://github.com/joeldacuma/product-customer-app/blob/master/github-images/customer-page.PNG)
 
-3.GROUP CUSTOMER/PRODUCTD:
+3.GROUP CUSTOMER/PRODUCT:
 ![GROUP](https://github.com/joeldacuma/product-customer-app/blob/master/github-images/group-customers.PNG)
 
 4. PRODUCT PAGE:
