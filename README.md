@@ -13,13 +13,13 @@ Node.js (https://nodejs.org/en)
 ![CUSTOMERMODAL](https://github.com/joeldacuma/product-customer-app/blob/master/github-images/customer-modal.PNG)
 
 2. Customer Page:
-![CUSTOMERPAGE](https://github.com/joeldacuma/crescendo-test/blob/master/github-images/customer-page.PNG)
+![CUSTOMERPAGE](https://github.com/joeldacuma/product-customer-app/blob/master/github-images/customer-page.PNG)
 
 3.GROUP CUSTOMER/PRODUCTD:
-![GROUP](https://github.com/joeldacuma/crescendo-test/blob/master/github-images/group-customers.PNG)
+![GROUP](https://github.com/joeldacuma/product-customer-app/blob/master/github-images/group-customers.PNG)
 
 4. PRODUCT PAGE:
-![PRODUCTPAGE](https://github.com/joeldacuma/crescendo-test/blob/master/github-images/product-page.PNG)
+![PRODUCTPAGE](https://github.com/joeldacuma/product-customer-app/blob/master/github-images/product-page.PNG)
 
 ## Run Install
 
